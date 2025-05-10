@@ -1,0 +1,215 @@
+/* /* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+  }
+  
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+  }
+   */
+
+   /* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: linear-gradient(145deg, #e6ecf3, #f5f7fa);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* App Layout */
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: transparent;
+  }
+  
+  /* Main Content Area */
+  .main-content {
+    display: flex;
+    flex: 1;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Animated Border Component */
+  .animated-border {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    animation: borderColorChange 6s infinite alternate;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Border Color Animation */
+  @keyframes borderColorChange {
+    0% {
+      border-color: #4f46e5;
+    }
+    25% {
+      border-color: #0ea5e9;
+    }
+    50% {
+      border-color: #10b981;
+    }
+    75% {
+      border-color: #f59e0b;
+    }
+    100% {
+      border-color: #ef4444;
+    }
+  }
+
+
+ */
+
+
+ /* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --background: #f5f7fa;
+    --text: #222;
+    --card-bg: #ffffff;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dark-mode {
+    --background: #1a202c;
+    --text: #f7fafc;
+    --card-bg: #2d3748;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  body {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* App Layout */
+  .app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: transparent;
+  }
+  
+  /* Main Content Area */
+  .main-content {
+    display: grid;
+    grid-template-columns: 1fr 300px 250px; /* Editor, Chat, User List/ChangeLog */
+    gap: 2rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    padding: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .main-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Animated Border Component */
+  .animated-border {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 1rem;
+    animation: borderColorChange 6s infinite alternate;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: var(--shadow);
+  }
+  
+  /* Border Color Animation */
+  @keyframes borderColorChange {
+    0% { border-color: #4f46e5; }
+    25% { border-color: #0ea5e9; }
+    50% { border-color: #10b981; }
+    75% { border-color: #f59e0b; }
+    100% { border-color: #ef4444; }
+  }
+  
+  /* Fade-in Animation for New Elements */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .new-item {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  /* Change Log Styles */
+  .change-log {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    height: fit-content;
+  }
+  
+  .change-log h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .change-log ul {
+    list-style: none;
+  }
+  
+  .change-log li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  
+  .change-log li:last-child {
+    border-bottom: none;
+  }
