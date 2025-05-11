@@ -49,7 +49,9 @@ export const SocketProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const [changes, setChanges] = useState<Change[]>([]);
 
   const connectToServer = (username: string, color: string) => {
-    const newSocket = io('http://localhost:5001', {
+    // const newSocket = io('http://localhost:5001', {
+      const newSocket = io('https://collaborative-editor-backend-tewc.onrender.com', {
+
       reconnection: true,
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,
